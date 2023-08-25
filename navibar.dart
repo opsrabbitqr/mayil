@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mayil_test/home.dart';
-import 'package:mayil_test/profile.dart';
-import 'package:mayil_test/report.dart';
+
+import 'package:mayil_test/screens/profile.dart';
+import 'package:mayil_test/screens/report.dart';
+
+import 'package:mayil_test/screens/home.dart';
 
 
 class navi extends StatefulWidget {
@@ -22,8 +24,8 @@ class _naviState extends State<navi> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: tabs[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-    currentIndex: _selectedIndex,
+      bottomNavigationBar:BottomNavigationBar(
+        currentIndex: _selectedIndex,
 
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.lightGreen.shade800,
@@ -49,6 +51,10 @@ onTap: (index){
       });
 },
       ),
-    );
+   );
   }
 }
+
+
+
+

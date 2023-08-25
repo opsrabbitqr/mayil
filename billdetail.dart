@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:mayil_test/dash1.dart';
-import 'package:mayil_test/endtrip.dart';
+import 'package:mayil_test/screens/dash1.dart';
+import 'package:mayil_test/screens/endtrip.dart';
 void main(){
   runApp(MaterialApp(
     home: billdetail(),
@@ -20,24 +20,23 @@ class billdetailState extends State<billdetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
+          child:SafeArea(
             child: Column(children: [
               Row(
                   children: [
 
 
-                    Padding(
-                        padding: const EdgeInsets.only(top: 40),
-
-                        child:IconButton(
-                          icon:Icon(Icons.arrow_back,),
+                    IconButton(
+                          icon:Icon(Icons.arrow_back),
+                          iconSize: 30,
                           onPressed: (){
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) => end_trip()));
                           },
-                        )
-                    ),
+                        ),
+
                     const Padding(
-                        padding: EdgeInsets.only(top: 40,right: 50),
+                        padding: EdgeInsets.only(right: 50),
 
                         child: Text('Bill Details',
                             style: TextStyle(
@@ -47,7 +46,7 @@ class billdetailState extends State<billdetail> {
                                 letterSpacing: 1))),
                     SizedBox(width:25),
                     Padding(
-                      padding: const EdgeInsets.only(top: 40,right: 20),
+                      padding: const EdgeInsets.only(right: 20),
                       child: Container(
                         height: 35,
                         width: 150,
@@ -260,10 +259,10 @@ class billdetailState extends State<billdetail> {
                             children: [
                               Text('End KM',
                                   style: TextStyle(
-                                      fontSize: 16, fontFamily: 'Montserret')),
+                                      fontSize: 16,)),
                               Text('15900 KM',
                                   style: TextStyle(
-                                      fontSize: 16, fontFamily: 'Montserret')),
+                                      fontSize: 16)),
                             ])),
                     Divider(
                       color: Colors.grey,
@@ -276,10 +275,10 @@ class billdetailState extends State<billdetail> {
                             children: [
                               Text('Total KM',
                                   style: TextStyle(
-                                      fontSize: 16, fontFamily: 'Montserret')),
+                                      fontSize: 16,)),
                               Text('270 KM',
                                   style: TextStyle(
-                                      fontSize: 16, fontFamily: 'Montserret')),
+                                      fontSize: 16)),
                             ])),
                   ])),
               Padding(
@@ -309,10 +308,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('Basic 20KM',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16, )),
                             Text('370.00',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16, )),
                           ])),
                   Divider(
                     color: Colors.grey,
@@ -325,10 +324,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('100 KM',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                             Text('1200.00',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                           ])),
                   Divider(
                     color: Colors.grey,
@@ -341,10 +340,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('Extra Waiting Time',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                             Text('0.00',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                           ])),
                   Divider(
                     color: Colors.grey,
@@ -357,10 +356,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('AC Charge',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                             Text('0.00',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                           ])),
                   Divider(
                     color: Colors.grey,
@@ -373,10 +372,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('Hills Charge',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16)),
                             Text('0.00',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16, )),
                           ])),
                   Padding(
                       padding: EdgeInsets.all(6.0),
@@ -385,10 +384,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('Discount',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                             Text('0.00',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                           ])),
                   Divider(
                     color: Colors.grey,
@@ -401,10 +400,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('Driver Beta',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                             Text('300 KM',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                           ])),
                   Divider(
                     color: Colors.grey,
@@ -417,10 +416,10 @@ class billdetailState extends State<billdetail> {
                           children: [
                             Text('Total Amount',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16, )),
                             Text('1870',
                                 style: TextStyle(
-                                    fontSize: 16, fontFamily: 'Montserret')),
+                                    fontSize: 16,)),
                           ])),
                 ]),
               ),
@@ -439,6 +438,6 @@ class billdetailState extends State<billdetail> {
                     )),
               ),
               const SizedBox(height: 20,)
-            ])));
+            ]))));
   }
 }

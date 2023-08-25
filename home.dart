@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:mayil_test/dash1.dart';
-import 'package:mayil_test/profile.dart';
-import 'package:mayil_test/report.dart';
-
+import 'package:mayil_test/screens/dash1.dart';
+import 'package:mayil_test/screens/profile.dart';
+import 'package:mayil_test/screens/report.dart';
 
 class home extends StatefulWidget {
-  const home({super.key});
-
   @override
-  State<home> createState() => _homeState();
+  State<home> createState() => homeState();
 }
 
-class _homeState extends State<home> {
+class homeState extends State<home> {
   bool isSwitched = true;
+  int _selectedIndex = 0;
+  final tabs =[
+    home(),
+    report(),
+    profile(),
+  ];
 
+
+  // get email => '${email}';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: Center(
+        body: Center(
+      child: SingleChildScrollView(
         child: Column(children: [
           Row(children: [
             const Align(
@@ -29,15 +34,15 @@ class _homeState extends State<home> {
               child: Text(
                 'Hello..!!',
                 style: TextStyle(
-                    color: Colors.grey.shade700,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.grey.shade700,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(
               width: 199,
             ),
-
             const SizedBox(
               width: 11,
             ),
@@ -63,14 +68,16 @@ class _homeState extends State<home> {
             height: 20,
           ),
           Container(
+              margin: EdgeInsets.only(left: 20),
               alignment: Alignment.topLeft,
               child: Text(
-                '    TN59BR5628',
+                'Customer Id',
+                // '${email}',
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                    color: Colors.grey.shade800,
-                    fontFamily: 'Montserret'),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.grey.shade800,
+                ),
               )),
           const SizedBox(
             height: 20,
@@ -93,7 +100,7 @@ class _homeState extends State<home> {
                 child: Row(children: [
                   const SizedBox(width: 20),
                   const Image(
-                    image: AssetImage('assets/procar.png'),
+                    image: AssetImage('assets/image/procar.png'),
                   ),
                   const SizedBox(width: 20),
                   Container(
@@ -147,10 +154,9 @@ class _homeState extends State<home> {
                 onTap: () {},
                 child: const Center(
                     child: Text(
-                      'CURRENT LOCATION',
-                      style:
-                      TextStyle(color: Colors.white),
-                    )),
+                  'CURRENT LOCATION',
+                  style: TextStyle(color: Colors.white),
+                )),
               )),
           const SizedBox(
             height: 20,
@@ -201,13 +207,13 @@ class _homeState extends State<home> {
               style: TextStyle(fontSize: 18),
             ),
           ),
-          SizedBox(height: 255,),
-        Row(
-
+          const SizedBox(
+            height: 255,
+          ),
+          const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-
-                Padding(
+                /*  Padding(
                   padding: const EdgeInsets.only(left: 40),
                   child: InkWell(
                     onTap: () {
@@ -237,9 +243,8 @@ class _homeState extends State<home> {
                   padding: const EdgeInsets.only(right: 40),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                        MaterialPageRoute(
-                          builder: (context) => const report()));
+                      //Navigator.pushReplacement(context, MaterialPageRoute(
+                        // builder: (context) => const report()));
                     },
                     child: Column(children: [
                       Icon(
@@ -256,12 +261,9 @@ class _homeState extends State<home> {
                       ),
                     ]),
                   ),
-                ),
+                ),*/
               ])
         ]),
+    )));
 
-      ),
-
-    );
-  }
-}
+}}

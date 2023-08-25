@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mayil_test/endtrip.dart';
-import 'package:mayil_test/home.dart';
-import 'package:mayil_test/profile.dart';
+import 'package:mayil_test/screens/endtrip.dart';
+import 'package:mayil_test/screens/home.dart';
+import 'package:mayil_test/screens/profile.dart';
+
 
 void main() {
   runApp(const MaterialApp(
@@ -24,9 +25,10 @@ class _dash1State extends State<dash1> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
+          child:SafeArea(
           child: Column(children: [
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20),
+              padding: const EdgeInsets.only(left: 20),
               child: Row(children: [
                 const Align(
                   alignment: Alignment.center,
@@ -97,7 +99,7 @@ class _dash1State extends State<dash1> {
                   child: Row(children: [
                     const SizedBox(width: 20),
                     const Image(
-                      image: AssetImage('assets/procar.png'),
+                      image: AssetImage('assets/image/procar.png'),
                     ),
                     const SizedBox(width: 20),
                     Container(
@@ -406,10 +408,10 @@ class _dash1State extends State<dash1> {
                   child: const Icon(Icons.arrow_back_ios_new),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const home()));
+                        MaterialPageRoute(builder: (context) => home()));
                   }),
             )
           ]),
-        ));
+          )));
   }
 }
