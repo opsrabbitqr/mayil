@@ -1,76 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:mayil_test/login.dart';
+import '../screens/home.dart';
+import '../screens/profile.dart';
+import '../screens/report.dart';
+import '../screens/splash.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Splash(),
-    debugShowCheckedModeBanner: false,
-  ));
+  runApp(const MyApp());
 }
 
-class Splash extends StatefulWidget {
-  const Splash({super.key});
-  @override
-  _SplashState createState() => _SplashState();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-class _SplashState extends State<Splash> {
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const Login()));
-    });
-  }
-
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 140, 0, 0),
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/building.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/mayil rect.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 700,
-          width: 390,
-          child: Image.asset('assets/mayillogo.png'),
-        ),
-        const Padding(
-          padding: EdgeInsets.fromLTRB(110, 550, 50, 0),
-          child: Text(
-            'WELCOME!!',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: Colors.white,
-                letterSpacing: 3),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 600),
-          child: Image.asset(
-            'assets/downlogo.png',
-            width: 390,
-            fit: BoxFit.fill,
-          ),
-        )
-      ]),
+    return  MaterialApp(
+      home: splash(
+      ),
+      debugShowCheckedModeBanner: false,
+
     );
   }
 }
+
+/*class navi extends StatefulWidget {
+  const navi({super.key});
+  @override
+  State<navi> createState() => _naviState();
+}
+
+class _naviState extends State<navi> {
+  int _selectedIndex = 0;
+  final tabs =[
+
+    const report(),
+    const profile(),
+    home()
+  ];
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: tabs[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+
+        currentIndex: _selectedIndex,
+
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.lightGreen.shade800,
+        unselectedItemColor: Colors.grey.shade600,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.report_gmailerrorred),
+            label: 'Report',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_pin_rounded),
+            label: 'Profile',
+          )
+        ],
+
+        onTap: (index){
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+    );
+  }
+}*/
+
+
+
